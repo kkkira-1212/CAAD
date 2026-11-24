@@ -1,22 +1,18 @@
-# CAAD
+# CAAD: Causality-Aware Multivariate Time Series Anomaly Detection via Multi-Scale Alignment and Structural Causal Consistency
 
-## Abstract
+[Xin Wang](https://github.com/kkkira-1212), [Yunshi Wen](https://yunshiwen.github.io/), [Yanan He](https://echoo113.github.io/), [Haotian Xu](https://orcid.org/0009-0009-3024-4181), [Youlan Zhao](https://orcid.org/0009-0007-0818-9556), [Michel Ferreira Cardia Haddad](https://www.qmul.ac.uk/business-school/staff/academic/profiles/haddadm.html), [Tengfei Ma](https://sbu-ma.github.io/)
 
-CAAD is a causal anomaly detection framework for multiscale time series.
-It monitors temporal deviations in residuals and structural deviations in learned causal graphs.
-The codebase provides training, evaluation, and fusion sweep entrypoints for reproducible experiments.
+**KDD 2026 · Research Track**
+
+[arXiv preprint](https://arxiv.org/abs/2607.08555) · [ACM proceedings](https://doi.org/10.1145/3770855.3817978) · [Quick start](#quick-start) · [BibTeX](#citation)
+
+## Overview
+
+This repository contains the official implementation of CAAD. CAAD detects multivariate time-series anomalies by monitoring two signals: temporal prediction residuals and changes in the relationships between variables. It aligns dynamics at fine and coarse timescales and uses an asymmetric gate to combine temporal and structural anomaly scores.
 
 ## Framework
 
-![CAAD Framework](assets/caad_framework.png)
-
-## Features
-
-- **CAAD framework**: Causal deviation tracking with gradient-based causal matrices
-- **Multi-scale alignment**: Joint modeling of fine/coarse dynamics
-- **Temporal deviation**: MAD-normalized residual scoring with top-k aggregation
-- **Structural deviation**: Gradient-based causal matrix deviation to capture relational topology shifts.
-- **Causal fusion**: Structural and temporal scores with configurable fusion
+![CAAD framework showing multi-scale alignment and temporal and structural anomaly scoring](assets/caad_framework.png)
 
 ## Project Structure
 
@@ -85,5 +81,18 @@ python scripts/sweep_causal_fusion.py \
 
 ## Citation
 
-If you use this code, please cite our work.
+If you use this repository in your research, please cite the published KDD paper:
 
+```bibtex
+@inproceedings{wang2026caad,
+  author    = {Wang, Xin and Wen, Yunshi and He, Yanan and Xu, Haotian and
+               Zhao, Youlan and Haddad, Michel Ferreira Cardia and Ma, Tengfei},
+  title     = {{CAAD: Causality-Aware Multivariate Time Series Anomaly Detection via Multi-Scale Alignment and Structural Causal Consistency}},
+  booktitle = {Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2},
+  year      = {2026},
+  pages     = {5091--5101},
+  publisher = {Association for Computing Machinery},
+  doi       = {10.1145/3770855.3817978},
+  url       = {https://doi.org/10.1145/3770855.3817978}
+}
+```
